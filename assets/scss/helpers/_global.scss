@@ -1,0 +1,16 @@
+@use "functions" as *;
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+body {
+  padding: 50px 0;
+  font-family: Arial;
+  background-color: color(body-color);
+}
+button {
+  cursor: pointer;
+  border: none;
+  outline: none;
+}

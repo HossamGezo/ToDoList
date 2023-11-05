@@ -1,0 +1,149 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  padding: 50px 0;
+  font-family: Arial;
+  background-color: #F1F5F9;
+}
+
+button {
+  cursor: pointer;
+  border: none;
+  outline: none;
+}
+
+.todolist {
+  width: 800px;
+  background-color: white;
+  margin: 0 auto;
+  border-radius: 10px;
+  overflow: hidden;
+}
+.todolist__create {
+  position: sticky;
+  top: 0;
+}
+.todolist__create--heading {
+  text-align: center;
+  padding: 20px;
+  background-color: orange;
+  color: white;
+}
+.todolist__create--task {
+  padding: 20px 10px;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  gap: 10px;
+  background-color: rgb(255, 237, 202);
+}
+.todolist__create--task input {
+  padding: 20px 30px;
+  flex: 1;
+  outline: none;
+  border: none;
+  border-bottom: 1px solid #FFD68A;
+  caret-color: orange;
+  font-size: 17px;
+  border-radius: 10px;
+}
+.todolist__create--task .btn {
+  padding: 20px 30px;
+  transition: 0.3s linear;
+  font-weight: bold;
+  background-color: #D18700;
+  color: white;
+  font-size: 17px;
+  font-weight: bold;
+  border-radius: 10px;
+}
+.todolist__create--task .btn:hover {
+  background-color: orange;
+  scale: 1.04;
+}
+.todolist .tasks {
+  max-height: 100vh;
+  overflow: auto;
+}
+.todolist .tasks::-webkit-scrollbar {
+  width: 10px;
+}
+.todolist .tasks::-webkit-scrollbar-track {
+  background: rgb(255, 237, 202);
+}
+.todolist .tasks::-webkit-scrollbar-thumb {
+  background: orange;
+}
+.todolist .tasks > *.mytask:not(:last-child) {
+  border-bottom: 1px solid #FFD68A;
+  margin-bottom: 30px;
+}
+.todolist .tasks .delete-all {
+  width: 100%;
+  border-radius: 10px;
+  padding: 20px 10px;
+  background-color: #D18700;
+  color: white;
+  font-size: 20px;
+  font-weight: bold;
+  text-align: center;
+  margin-bottom: 20px;
+  transition: 0.3s linear;
+}
+.todolist .tasks .delete-all:hover {
+  scale: 1.03;
+  background-color: red;
+}
+.todolist .tasks .mytask {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 25px;
+  padding: 10px;
+  transition: 0.3s linear;
+}
+.todolist .tasks .mytask.done {
+  background-color: #eee;
+}
+.todolist .tasks .mytask:hover:not(.done) {
+  background-color: rgb(255, 237, 202);
+}
+.todolist .tasks .mytask .task {
+  flex: 1;
+}
+.todolist .tasks .mytask .task p {
+  font-size: 18px;
+  margin-bottom: 5px;
+  text-transform: capitalize;
+}
+.todolist .tasks .mytask .task .date {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  color: #959595;
+}
+.todolist .tasks .mytask > .task-icon {
+  font-size: 18px;
+  cursor: pointer;
+  color: #D18700;
+  transition: 0.3s linear;
+}
+.todolist .tasks .mytask > .task-icon:hover {
+  scale: 1.5;
+}
+.todolist .tasks .mytask > .task-icon.delete:hover {
+  color: red;
+}
+.todolist .tasks .mytask > .task-icon.edit:hover {
+  color: lightskyblue;
+}
+.todolist .tasks .mytask > .task-icon.ok:hover {
+  color: lightseagreen;
+}
+.todolist .tasks .mytask > .task-icon.uncomplete:hover {
+  color: darkred;
+}/*# sourceMappingURL=main.css.map */

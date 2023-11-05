@@ -1,0 +1,130 @@
+// Import All Helpers Directory Contents
+@use "helpers/usinghelpers" as *;
+
+// Start Project
+.todolist {
+  width: 800px;
+  background-color: white;
+  margin: 0 auto;
+  border-radius: 10px;
+  overflow: hidden;
+  &__create {
+    position: sticky;
+    top: 0;
+    &--heading {
+      text-align: center;
+      padding: 20px;
+      background-color: orange;
+      color: white;
+    }
+    &--task {
+      padding: 20px 10px;
+      @include flex(null, null, flex-end, center, null);
+      gap: 10px;
+      background-color: rgb(255, 237, 202);
+      input {
+        padding: 20px 30px;
+        flex: 1;
+        outline: none;
+        border: none;
+        border-bottom: 1px solid #FFD68A;
+        caret-color: orange;
+        font-size: 17px;
+        border-radius: 10px;
+      }
+      .btn {
+        padding: 20px 30px;
+        transition: 0.3s linear;
+        font-weight: bold;
+        background-color: #D18700;
+        color: white;
+        font-size: 17px;
+        font-weight: bold;
+        border-radius: 10px;
+        &:hover {
+          background-color: orange;
+          scale: 1.04;
+        }
+      }
+    }
+  }
+  .tasks {
+    max-height: 100vh;
+    overflow: auto;
+    &::-webkit-scrollbar {
+      width: 10px;
+    }
+    &::-webkit-scrollbar-track {
+      background: rgb(255, 237, 202);
+    }
+    &::-webkit-scrollbar-thumb {
+      background: orange;
+    }
+    > *.mytask:not(:last-child) {
+      border-bottom: 1px solid #FFD68A;
+      margin-bottom: 30px;
+    }
+    .delete-all {
+      width: 100%;
+      border-radius: 10px;
+      padding: 20px 10px;
+      background-color: #D18700;
+      color: white;
+      font-size: 20px;
+      font-weight: bold;
+      text-align: center;
+      margin-bottom: 20px;
+      transition: 0.3s linear;
+      &:hover {
+        scale: 1.03;
+        background-color: red;
+      }
+    }
+    .mytask {
+      @include flex(null, null, space-between, center, null);
+      gap: 25px;
+      padding: 10px;
+      transition: 0.3s linear;
+      &.done {
+        background-color: #eee;
+      }
+      &:hover:not(.done) {
+        background-color: rgb(255, 237, 202);
+      }
+      .task {
+        flex: 1;
+        p {
+          font-size: 18px;
+          margin-bottom: 5px;
+          text-transform: capitalize;
+        }
+        .date {
+          @include flex(null, null, null, center, null);
+          gap: 5px;
+          color: #959595;
+        }
+      }
+      > .task-icon {
+        font-size: 18px;
+        cursor: pointer;
+        color: #D18700;
+        transition: 0.3s linear;
+        &:hover {
+          scale: 1.5;
+        }
+        &.delete:hover {
+          color: red;
+        }
+        &.edit:hover {
+          color: lightskyblue;
+        }
+        &.ok:hover {
+          color: lightseagreen;
+        }
+        &.uncomplete:hover {
+          color: darkred;
+        }
+      }
+    }
+  }
+}
